@@ -39,7 +39,7 @@ function changeRoute() {
   display: flex;
   font-size: 22px;
 
-  color: var(--text-gray);
+  
   cursor: pointer;
 }
 
