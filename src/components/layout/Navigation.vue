@@ -3,36 +3,30 @@
     <div class="nav_card">
       <!-- logo icon -->
       <router-link to="/" class="logo_wrapper">
-        <IconLogo />
+        <img src="../../assets/logo.png" alt="Website logo" class="w-8 h-8" />
+        <div class="text-lg pl-2">Dad Jokes</div>
       </router-link>
 
       <div class="nav_wrapper">
-        <!-- mobile menu icon -->
-        <div
-          class="mobile_nav_menu"
-          @click="mobile_nav_menu_open = !mobile_nav_menu_open"
-        >
-          <svg-icon
-            type="mdi"
-            :path="mobile_nav_menu_open ? mdiMinus : mdiChessRook"
-            :size="28"
-            style="color: var(--link-color);"
-          ></svg-icon>
-        </div>
-
         <div :class="`nav_items ${mobile_nav_menu_open ? 'show_mobile_nav': ''}`">
-          <nav-item
+          <!-- <nav-item
             text="Home"
-            :path="'/Home'"
+            :path="'/'"
             :active="['Home']"
-            @click="mobile_nav_menu_open = false"
-          ></nav-item>
+          ></nav-item> -->
           <nav-item
             text="Jokes"
             :path="'/jokes'"
             :active="['Jokes']"
-            @click="mobile_nav_menu_open = false"
           ></nav-item>
+          <nav-item
+            text="Search"
+            @click="ToggleModalOpen()"
+          ></nav-item>
+
+          <Search
+            v-if="searchStore.modal_open"
+          />
         </div>
       </div>
     </div>
@@ -41,9 +35,16 @@
 
 <script setup>
 import { ref } from 'vue';
+import { useSearchStore } from '@/stores/search';
 import NavItem from './NavItem.vue'
+import Search from '../search/Search.vue';
 
+const searchStore = useSearchStore();
 const mobile_nav_menu_open = ref();
+
+function ToggleModalOpen() {
+  searchStore.toggleModalOpen();
+}
 
 </script>
 
@@ -61,12 +62,24 @@ const mobile_nav_menu_open = ref();
   width: 100%;
   height: 100%;
   background: var(--navbar-bg);
+  display: flex;
+  justify-content: space-between;
+}
+
+.dark .nav_card {
+  background: var(--navbar-dark-bg);
 }
 
 .logo_wrapper {
   display: flex;
   align-items: center;
   justify-content: center;
+  padding-left: calc(8px + 1.5625vw);
+  color: var(--text-dark);
+}
+
+.dark .logo_wrapper {
+  color: var(--colors-almostlight);
 }
 
 .nav_wrapper {
@@ -74,7 +87,7 @@ const mobile_nav_menu_open = ref();
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  padding-right: calc(100vw - 6px);
+  padding-right: calc(8px + 1.5625vw);
 }
 
 .nav_items {
@@ -82,6 +95,11 @@ const mobile_nav_menu_open = ref();
   justify-content: center;
   align-content: center;
   gap: 16px;
+  color: var(--text-gray);
+}
+
+.dark .nav_items {
+  color: var(--colors-almostlight);
 }
 
 </style>
