@@ -3,15 +3,16 @@ const headers = new Headers({
   'Accept': 'application/json'
 });
 
-export async function getAll(page=2, limit=20, term) {
-  const queries = new URLSearchParams({
-    page: page,
-    limit: limit
-  })
-  if(term) {
-    queries.append({term: term})
+export async function getAll(page, limit, term) {
+  let url = 'https://icanhazdadjoke.com/search';
+  let params = new URLSearchParams();
+
+  if(page) params.append('page',page)
+  if(limit) params.append('limit',limit)
+  if(term) params.append('term', term)
+  if(params.size) {
+    url += '?' + params;
   }
-  const url = 'https://icanhazdadjoke.com/search/' + queries;
   return new Promise(async (resolve, reject) => {
     try {
       const response = await fetch(url, {headers: headers});
