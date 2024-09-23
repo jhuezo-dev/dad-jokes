@@ -19,8 +19,10 @@ import ThemeSwitcher from './ThemeSwitcher.vue'
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 1fr;
-  height: 60px;
   position: relative;
+  height: 65px;
+  width: 100%;
+  bottom: 0;
   z-index: 10;
   background: var(--navbar-bg);
 }

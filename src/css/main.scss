@@ -62,13 +62,40 @@ body {
   color: var(--colors-dark);
 }
 
-.dark {
+.dark body, .dark h1, .dark h2, .dark h3, .dark h4, .dark span{
   color: var(--colors-almostlight);
+}
+
+h1, h2, h3, h4, span {
+  color: var(--colors-darker);
 }
 
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
+}
+
+h2 {
+  font-size: 1.5em;
+}
+
+h3 {
+  font-size: 1.17em;
+}
+
+h4 {
+  font-size: 1em;;
+}
+
+.alert {
+  display: flex;
+  align-items: center;
+  background: #1a1a1a;
+  color: var(--colors-almostlight);
+  padding: 0.6em 1.2em;
+  position: relative;
+  border-radius: 8px;
+
 }
 
 button {
@@ -102,6 +129,17 @@ input {
   cursor: pointer;
   transition: border-color 0.25s;
   
+}
+
+.dark input{
+  background: var(--navbar-dark-bg);
+}
+.dark ul{
+  background: var(--navbar-dark-bg);
+
+  li {
+    border-color: var(--colors-darkgray);
+  }
 }
 
 div {

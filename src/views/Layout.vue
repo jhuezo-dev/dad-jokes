@@ -6,13 +6,13 @@
         <component :is="Component" class="content_bg"/>
       </router-view>
     </div>
-    <Footer />
+    <Foooter />
   </div>
 </template>
 
 <script setup>
 import Navigation from '@/components/layout/Navigation.vue'
-import Footer from '@/components/layout/Footer.vue'
+import Foooter from '@/components/layout/Foooter.vue'
 import { onMounted } from 'vue';
 import { useThemeStore } from '../stores/theme';
 
@@ -42,8 +42,8 @@ onMounted(async ()=> {
   display: grid;
   grid-template-rows: auto 1fr;
   grid-template-columns: 1fr;
-  width: 100vw;
-  height: 100vh;
+  width: 100dvw;
+  height: 100dvh;
   background: var(--colors-almostlight);
   transition: 100ms ease-in-out;
 }
@@ -54,15 +54,39 @@ onMounted(async ()=> {
 }
 
 .content_wrapper {
-  padding: 6%;
-  grid-template-columns: auto 1fr;
+  // display: grid;
+  position: relative;
+  grid-template-rows: 1fr;
+  grid-template-columns: 1fr;
+  overflow-y: auto;
+  // grid-template-columns: auto 1fr;
 }
 
 .content_bg {
+  padding: 8%;
   height: -webkit-fill-available;
-  height: 100dvh;
-  display: flex;
-  flex-direction: column;
+  height: 100%;
+  overflow-y: auto;
+}
+
+@media only screen and (max-width: 480px) {
+  .layout {
+    // height: -webkit-fill-available;
+    // height: 100dvh;
+  }
+  .content_wrapper {
+    // height: calc(100dvh - 60px);
+    // grid-template-columns: auto 1fr;
+    // height: 100%;
+    // height: -webkit-fill-available;
+  }
+  
+  .content_bg {
+    // height: -webkit-fill-available;
+    // height: 100dvh;
+    // height: 100%;
+  }
+  
 }
 
 </style>
