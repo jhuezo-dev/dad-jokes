@@ -3,8 +3,8 @@
     <div class="nav_card">
       <!-- logo icon -->
       <router-link to="/" class="logo_wrapper">
-        <img src="../../assets/logo.png" alt="Website logo" class="w-8 h-8" />
-        <div class="text-lg pl-2">Dad Jokes</div>
+        <img src="../../assets/logo.png" alt="Website logo" class="w-8 h-8 logo" />
+        <div class="text-xl pl-2">Dad Jokes</div>
       </router-link>
 
       <div class="nav_wrapper">
@@ -21,6 +21,7 @@
           ></nav-item>
           <nav-item
             text="Search"
+            :path="`${route.path}`"
             @click="ToggleModalOpen()"
           ></nav-item>
 
@@ -36,9 +37,11 @@
 <script setup>
 import { ref } from 'vue';
 import { useSearchStore } from '@/stores/search';
+import { useRoute } from 'vue-router';
 import NavItem from './NavItem.vue'
 import Search from '../search/Search.vue';
 
+const route = useRoute();
 const searchStore = useSearchStore();
 const mobile_nav_menu_open = ref();
 
@@ -55,6 +58,9 @@ function ToggleModalOpen() {
   grid-template-rows: 1fr;
   height: 80px;
   position: relative;
+  top: 0;
+  width: 100%;
+
   z-index: 10;
 }
 
@@ -76,6 +82,15 @@ function ToggleModalOpen() {
   justify-content: center;
   padding-left: calc(8px + 1.5625vw);
   color: var(--text-dark);
+
+}
+// .logo {
+//   background: var(--text-dark);
+// }
+
+.dark .logo {
+  border-radius: 100%;
+  background: var(--colors-almostlight);
 }
 
 .dark .logo_wrapper {

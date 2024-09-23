@@ -1,9 +1,9 @@
 <template>
   <div v-if="themeStore.theme == 'dark'">
-    <img :src="moon_icon" alt="Moon icon" class="w-7 h-7" @click="ToggleTheme('light')">
+    <img :src="sun_icon" alt="Sun icon" class="w-7 h-7" @click="ToggleTheme('light')">
   </div>
   <div v-else>
-    <img :src="sun_icon" alt="Sun icon" class="w-7 h-7" @click="ToggleTheme('dark')">
+    <img :src="moon_icon" alt="Moon icon" class="w-7 h-7" @click="ToggleTheme('dark')">
   </div>
 </template>
 

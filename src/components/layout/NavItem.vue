@@ -1,6 +1,6 @@
 <template>
   <div class="nav-link" @click="changeRoute">
-    <span >{{ text }}</span>
+    <span class="text-lg">{{ text }}</span>
   </div>
 </template>
 
@@ -37,9 +37,6 @@ function changeRoute() {
 <style lang="scss" scoped>
 .nav-link {
   display: flex;
-  font-size: 22px;
-
-  
   cursor: pointer;
 }
 
