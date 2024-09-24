@@ -9,8 +9,10 @@ export const usecachedJokesStore = defineStore({
 
   actions: {
     storeJoke(j) {
-      this.jokes.push(j)
-      setItems('jokes', this.jokes)
+      if(!this.jokes.includes(j)) {
+        this.jokes.push(j)
+        setItems('jokes', this.jokes)
+      }
     }
   }
 });
