@@ -11,5 +11,6 @@ export default defineConfig({
       "@": fileURLToPath(new URL("./src", import.meta.url)),
     },
   },
-  assetsInclude: ["*.png", "*.avif"]
+  assetsInclude: ["*.png", "*.avif"],
+  base: "/dad-jokes/"
 })
