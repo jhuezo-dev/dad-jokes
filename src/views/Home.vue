@@ -30,7 +30,7 @@ async function getRandomJoke() {
     randomJoke.value = "Something went wrong.."
   }
   randomJoke.value = data
-  saveJoke(randomJoke.value)
+  await saveJoke(randomJoke.value)
 }
 
 async function saveJoke(j) {
