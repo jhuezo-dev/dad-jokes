@@ -39,10 +39,10 @@
                     <ul class="bg-almost-light rounded-t-lg">
                       <li v-for="j in jokes" :key="j.id" class="border-y py-2 ">
                         <div class="flex w-full gap-4">
-                          <span class="inline-block whitespace-nowrap overflow-hidden text-ellipsis pl-4">{{ j.joke
+                          <span class="inline-block whitespace-nowrap overflow-hidden text-ellipsis pl-4 mr-auto">{{ j.joke
                             }}</span>
                           <router-link :to="`/jokes/${j.id}`" @click="ToggleModalOpen()">
-                            <span class="inline-block whitespace-nowrap pr-4 ">View Full</span>
+                            <span class="inline-block whitespace-nowrap pr-4">View Full</span>
                           </router-link>
                         </div>
                       </li>
@@ -64,8 +64,8 @@
               </div>
             </div>
           </div>
-          <div class="modal_footer px-4 py-3 sm:px-6">
-            <button type="button" class="btn" @click="ToggleModalOpen">Cancel</button>
+          <div class="modal_footer flex px-4 py-3 sm:px-6">
+            <button class="ml-auto" @click="ToggleModalOpen">Cancel</button>
           </div>
         </div>
       </div>
