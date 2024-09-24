@@ -1,10 +1,12 @@
 <template>
-  <div class="flex flex-col">
-    <h1 class="justify-start font-medium">Wanna hear a funny joke?</h1>
-    <div class="text-xl my-6">{{ randomJoke.joke }}</div>
-
-    <div class="flex justify-end">
-      <button class="btn" @click="getRandomJoke">Wanna hear another?</button>
+  <div class="flex flex-col justify-center">
+    <div class="flex flex-col md:max-w-lg lg:max-w-xl xl:max-w-3xl mx-auto">
+      <h1 class="mr-auto font-medium">Wanna hear a funny joke?</h1>
+      <div class="mr-auto text-xl my-6">{{ randomJoke.joke }}</div>
+  
+      <div class="ml-auto">
+        <button class="button" @click="getRandomJoke">Wanna hear another?</button>
+      </div>
     </div>
   </div>
 </template>
