@@ -7,3 +7,10 @@ export function setItems(key, value) {
     localStorage.setItem("jokes", JSON.stringify(s));
   }
 }
+
+export function getItems() {
+  let s = JSON.parse(localStorage.getItem("jokes"));
+  if(s) {
+    return s
+  }
+}
