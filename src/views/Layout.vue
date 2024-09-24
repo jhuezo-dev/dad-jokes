@@ -54,39 +54,20 @@ onMounted(async ()=> {
 }
 
 .content_wrapper {
-  // display: grid;
   position: relative;
   grid-template-rows: 1fr;
   grid-template-columns: 1fr;
   overflow-y: auto;
-  // grid-template-columns: auto 1fr;
 }
 
 .content_bg {
-  padding: 8%;
+  padding-top: 4%;
+  padding-left: 8%;
+  padding-right: 8%;
+  padding-bottom: 4%;
   height: -webkit-fill-available;
   height: 100%;
   overflow-y: auto;
-}
-
-@media only screen and (max-width: 480px) {
-  .layout {
-    // height: -webkit-fill-available;
-    // height: 100dvh;
-  }
-  .content_wrapper {
-    // height: calc(100dvh - 60px);
-    // grid-template-columns: auto 1fr;
-    // height: 100%;
-    // height: -webkit-fill-available;
-  }
-  
-  .content_bg {
-    // height: -webkit-fill-available;
-    // height: 100dvh;
-    // height: 100%;
-  }
-  
 }
 
 </style>
