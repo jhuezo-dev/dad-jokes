@@ -12,7 +12,6 @@
           <nav-item
             text="Jokes"
             :path="'/jokes'"
-            :active="['Jokes']"
           ></nav-item>
           <nav-item
             text="Search"

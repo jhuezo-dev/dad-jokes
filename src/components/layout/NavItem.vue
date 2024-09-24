@@ -15,10 +15,6 @@ const props = defineProps({
   path: {
     type: String,
     default: '/'
-  },
-  active: {
-    type: [String, Array],
-    default: ''
   }
 })
 const emit = defineEmits(["clicked"]);
