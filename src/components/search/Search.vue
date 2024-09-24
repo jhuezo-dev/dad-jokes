@@ -34,7 +34,7 @@
                   <input type="text" class="w-full" placeholder="Enter text here..." @change="onTermSearch">
                 </div>
                 <h4 class="font-medium pt-4 text-left">Jokes</h4>
-                <div class="mt-2 max-h-36 md:max-h-96 overflow-y-auto rounded-t-lg">
+                <div class="mt-2 max-h-40 md:max-h-64 lg:max-h-64 xl:max-h-96 overflow-y-auto rounded-t-lg">
                   <div v-if="jokes.length > 0">
                     <ul class="bg-almost-light rounded-t-lg">
                       <li v-for="j in jokes" :key="j.id" class="border-y py-2 ">
@@ -76,7 +76,7 @@
 <script setup>
 import { ref, onMounted } from 'vue';
 import { useSearchStore } from '@/stores/search';
-import { getAll } from '@/api';
+import { getAll, getTerm } from '@/api';
 import Pagination from './Pagination.vue';
 
 const jokes = ref([]);
@@ -111,7 +111,7 @@ async function onLimitUpdate(limit) {
 }
 
 async function onTermSearch(term) {
-  const data = await getAll(currPage.value, pagelimit.value, term.target.value);
+  const data = await getTerm(term.target.value);
   if(!data) console.log('error searching term');
   updateData(data);
 }

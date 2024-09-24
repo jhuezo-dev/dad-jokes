@@ -1,7 +1,7 @@
 <!-- <a target="_blank" href="https://icons8.com/icon/6Fsj3rv2DCmG/twitterx">TwitterX</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a> -->
 <template>
-  <div class="flex flex-col">
-    <div class="flex flex-col">
+  <div class="flex flex-col justify-center">
+    <div class="flex flex-col md:max-w-lg lg:max-w-xl xl:max-w-3xl mx-auto">
       <div class="text-xl my-6">{{ joke }}</div>
       <div class="flex justify-left md:flex-wrap lg:flex-wrap xl:flex-wrap sm:justify-end md:justify-end lg:justify-end xl:justify-end gap-1 md:gap-3 lg:gap-3 xl:gap-3 pt-4">
         <a target="_blank" :href="`https://x.com/intent/tweet?url=${baseUrl}/${route.params.id}/amp&text=Check+out+this+#dadjoke&via=icanhazdadjoke`" >
