@@ -11,6 +11,5 @@ export default defineConfig({
       "@": fileURLToPath(new URL("./src", import.meta.url)),
     },
   },
-  assetsInclude: ["*.png", "*.avif"],
-  base: '/<REPO>/'
+  assetsInclude: ["*.png", "*.avif"]
 })
