@@ -12,5 +12,5 @@ export default defineConfig({
     },
   },
   assetsInclude: ["*.png", "*.avif"],
-  base: "/dad-jokes/"
+  // base: "/dad-jokes/"
 })
