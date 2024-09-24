@@ -1,1 +1,0 @@
-import{d as e}from"./index-jNdoP__Z.js";import{s as o}from"./utils-CaR3QmzF.js";const a=e({id:"cachedJokes",state:()=>({jokes:[]}),actions:{storeJoke(s){this.jokes.push(s),o("jokes",this.jokes)}}});export{a as u};

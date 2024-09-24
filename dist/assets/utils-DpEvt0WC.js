@@ -1,0 +1,1 @@
+function o(e,s){const t=JSON.parse(localStorage.getItem("jokes"));t?(t[e]=s,localStorage.setItem("jokes",JSON.stringify(t))):localStorage.setItem("jokes",JSON.stringify({[e]:s}))}function a(){let e=JSON.parse(localStorage.getItem("jokes"));if(e)return e}export{a as g,o as s};
