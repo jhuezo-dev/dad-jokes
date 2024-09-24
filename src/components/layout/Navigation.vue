@@ -9,11 +9,6 @@
 
       <div class="nav_wrapper">
         <div :class="`nav_items ${mobile_nav_menu_open ? 'show_mobile_nav': ''}`">
-          <!-- <nav-item
-            text="Home"
-            :path="'/'"
-            :active="['Home']"
-          ></nav-item> -->
           <nav-item
             text="Jokes"
             :path="'/jokes'"
@@ -25,9 +20,7 @@
             @click="ToggleModalOpen()"
           ></nav-item>
 
-          <Search
-            v-if="searchStore.modal_open"
-          />
+          <Search v-if="searchStore.modal_open"/>
         </div>
       </div>
     </div>
@@ -84,9 +77,6 @@ function ToggleModalOpen() {
   color: var(--text-dark);
 
 }
-// .logo {
-//   background: var(--text-dark);
-// }
 
 .dark .logo {
   border-radius: 100%;
