@@ -12,5 +12,5 @@ export default defineConfig({
     },
   },
   assetsInclude: ["*.png", "*.avif"],
-  publicDir: 'dad-jokes'
+  base: '/<REPO>/'
 })
