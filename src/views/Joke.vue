@@ -2,8 +2,6 @@
 <template>
   <div class="flex flex-col">
     <div class="flex flex-col">
-      <Alert v-if="show" :text="alertText" :show="show" @close="show = false" />
-
       <div class="text-xl my-6">{{ joke }}</div>
       <div class="flex justify-left md:flex-wrap lg:flex-wrap xl:flex-wrap sm:justify-end md:justify-end lg:justify-end xl:justify-end gap-1 md:gap-3 lg:gap-3 xl:gap-3 pt-4">
         <a target="_blank" :href="`https://x.com/intent/tweet?url=${baseUrl}/${route.params.id}/amp&text=Check+out+this+#dadjoke&via=icanhazdadjoke`" >
@@ -29,8 +27,6 @@ import { usecachedJokesStore } from "@/stores/cachedJokes";
 const cachedJokesStore = usecachedJokesStore();
 const route = useRoute();
 const joke = ref();
-const alertText = ref();
-const show = ref(false);
 const baseUrl = ref('https://icanhazdadjoke.com/j');
 
 onMounted(async () => {
@@ -44,11 +40,8 @@ async function getJoke(id) {
     joke.value = "Something went wrong..";
   }
   joke.value = data.joke;
-
   // add joke to cache
-  if (!cachedJokesStore.jokes.includes(data)) {
-    cachedJokesStore.storeJoke(data);
-  }
+  cachedJokesStore.storeJoke(data);
 }
 
 </script>
