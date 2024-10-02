@@ -95,6 +95,7 @@ async function getJokes() {
     jokes.value = [];
   }
   pageData.value = data;
+  console.log('data', pageData.value)
   jokes.value = data.results
 }
 
